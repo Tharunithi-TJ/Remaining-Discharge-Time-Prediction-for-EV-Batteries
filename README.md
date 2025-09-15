@@ -18,7 +18,7 @@ This notebook predicts the battery's current charge level (SOC).
 
 ---
 
-## 2. State of Health (SOH) Estimation (`SOH (1).ipynb`)
+## 2. State of Health (SOH) Estimation (`SOH.ipynb`)
 
 This notebook estimates the battery's long-term health and degradation (SOH).
 
