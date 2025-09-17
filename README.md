@@ -30,6 +30,22 @@ This notebook estimates the battery's long-term health and degradation (SOH).
 
 ---
 
+### 3. RUL, SOC & SOH Multi-Model Prediction (`RUL.ipynb`)
+
+This notebook develops and integrates three separate models to predict Remaining Useful Life (RUL), State of Charge (SOC), and State of Health (SOH).
+
+**Key Features:**
+
+* **Methodology:** It trains three distinct, specialized models:
+    * **XGBoost Regressor:** To predict SOC.
+    * **Kalman Filter:** To predict SOH.
+    * **Gaussian Process Regressor (GPR):** To predict RUL and its uncertainty.
+* **Target Variable Generation:** Similar to the SOC notebook, it uses the **Coulomb Counting** method to create the `SOC` target variable.
+* **Inputs:** A wide range of features are used across the models, including `voltage_measured`, `current_measured`, `temperature_measured`, `capacity`, and `cycle`.
+* **Outcome:** The notebook trains and saves each of the three models to separate files (`.pkl` and `.pth`). It concludes with a final integration step that loads the saved SOH and RUL models to make simultaneous predictions on a newly merged dataset.
+
+---
+
 ### How to Use
 1.  Open each `.ipynb` file in Google Colab.
 2.  Ensure you have the required datasets uploaded to your Colab environment.
